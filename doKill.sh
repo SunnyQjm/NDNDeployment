@@ -10,7 +10,7 @@ mapPort=$5
 
 
 spawn ssh $username@$ip -p$mapPort "
-cd Documents/CCNDeployment;
+cd Documents/NDNDeployment;
 ./kill.sh; 
 echo $name kill finish!!
 "
