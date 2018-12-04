@@ -81,6 +81,6 @@ for index in `seq 0 $length`
 do
     # 获取到路由的名字
     echo
-    deal $index 
+    deal $index & 
     echo
 done
