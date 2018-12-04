@@ -11,7 +11,7 @@ mapPort=$5
 
 spawn ssh $username@$ip -p$mapPort "
 cd Documents/NDNDeployment;
-./kill.sh; 
+sudo ./kill.sh; 
 echo $name kill finish!!
 "
 expect {
