@@ -10,8 +10,8 @@ mapPort=$5
 
 
 spawn ssh $username@$ip -p$mapPort "
- cd Documents
- pwd
+cd Documents
+git clone https://github.com/SunnyQjm/NDNDeployment.git
 "
 expect {
     "(yes/no)?" {

@@ -9,8 +9,9 @@ mapPort=$5
 /usr/bin/expect << EOD
 
 
-spawn ssh $username@$ip -p$mapPort"
-git clone https://github.com/SunnyQjm/NDNDeployment.git
+spawn ssh $username@$ip -p$mapPort "
+cd Documents/NDNDeployment;
+git pull
 "
 expect {
     "(yes/no)?" {

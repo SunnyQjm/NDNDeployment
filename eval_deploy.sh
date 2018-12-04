@@ -1,7 +1,7 @@
 #!/bin/bash
 
 command=$1
-DEBUG=1
+DEBUG=0
 
 # 读取网络拓扑配置
 json=`cat lab_topology.json`
