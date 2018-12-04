@@ -9,7 +9,7 @@ mapPort=$5
 /usr/bin/expect << EOD
 
 
-spawn ssh $username@$ip -p$mapPort"
+spawn ssh $username@$ip -p$mapPort "
 cd Documents/CCNDeployment;
 ./kill.sh; 
 echo $name kill finish!!
