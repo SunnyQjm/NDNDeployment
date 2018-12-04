@@ -4,15 +4,14 @@ echo $command
 username=$1
 password=$2
 ip=$3
-name=$4
+routerName=$4
 mapPort=$5
 /usr/bin/expect << EOD
 
 
-spawn ssh $username@$ip -p$mapPort"
-cd Documents/CCNDeployment;
-./kill.sh; 
-echo $name kill finish!!
+spawn ssh $username@$ip -p$mapPort "
+ cd Documents
+ pwd
 "
 expect {
     "(yes/no)?" {

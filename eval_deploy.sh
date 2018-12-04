@@ -1,7 +1,7 @@
 #!/bin/bash
 
 command=$1
-DEBUG=0
+DEBUG=1
 
 # 读取网络拓扑配置
 json=`cat lab_topology.json`
@@ -41,6 +41,7 @@ function deal(){
     nbs=$(echo $list | jq  ".[$index].nbs")
     #deal $routerName $network $site $router $mapPort $ip $username $password $nics $nbs &
  
+    echo "=======================开始处理$routerName==============="
     if [ $DEBUG -eq 1 ]; then
      echo 
      echo routerName: $routerName
@@ -62,9 +63,16 @@ function deal(){
     "deploy")
         ./deploy_nfd.sh
         ;;
+    "update")
+        ./update.sh $username $password $ip $routerName $mapPort
+        ;;
+    "clone")
+        ./clone.sh $username $password $ip $routerName $mapPort
+        ;;
     "kill")
-        ./doKill.sh $username $password $ip $mapPort $routerName
+        ./doKill.sh $username $password $ip $routerName $mapPort
     esac
+    echo "========================================================="
 }
 
 
@@ -73,8 +81,6 @@ for index in `seq 0 $length`
 do
     # 获取到路由的名字
     echo
-    echo "=======================开始处理$routerName==============="
-    deal $index &
-    echo "========================================================="
+    deal $index 
     echo
 done
