@@ -156,14 +156,14 @@
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/pkun1",
-                "nicIndex":3
+                "nicIndex":0
             },
             {
                 "name":"/ndn/edu/pkusz/pkun2",
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/pkun2",
-                "nicIndex":2
+                "nicIndex":1
             }
         ]
     },
@@ -340,24 +340,24 @@
         "password":"xuruiedward",
         "nics":[
             {
-                "name":"enp1s0f0",
-                "mac":"01:00:5E:00:17:AA"
+                "name":"enp6s0",
+                "mac":"00:e0:4c:68:a1:8a"
             },
             {
-                "name":"enp1s0f1",
-                "mac":"01:00:5E:00:17:AA"
+                "name":"enp7s0",
+                "mac":"00:e0:4c:68:a1:8b"
             },
             {
-                "name":"enp1s0f2",
-                "mac":"01:00:5E:00:17:AA"
+                "name":"enp8s0",
+                "mac":"00:e0:4c:68:a1:8c"
             },
             {
-                "name":"enp1s0f3",
-                "mac":"01:00:5E:00:17:AA"
+                "name":"enp9s0",
+                "mac":"00:e0:4c:68:a1:8d"
             },
             {
-                "name":"enp1s0",
-                "mac":"44:33:4c:00:15:b8"
+                "name":"enp3s0",
+                "mac":"08:60:6e:85:6c:1a"
             }
         ],
         "nbs":[
@@ -403,23 +403,23 @@
         "password":"xuruiedward",
         "nics":[
             {
-                "name":"enp1s0f0",
-                "mac":"01:00:5E:00:17:AA"
-            },
-            {
-                "name":"enp1s0f1",
-                "mac":"01:00:5E:00:17:AA"
-            },
-            {
-                "name":"enp1s0f2",
-                "mac":"01:00:5E:00:17:AA"
-            },
-            {
-                "name":"enp1s0f3",
-                "mac":"01:00:5E:00:17:AA"
+                "name":"enp4s0",
+                "mac":"00:e0:4c:68:a1:d6"
             },
             {
                 "name":"enp5s0",
+                "mac":"00:e0:4c:68:a1:d7"
+            },
+            {
+                "name":"enp6s0",
+                "mac":"00:e0:4c:68:a1:d8"
+            },
+            {
+                "name":"enp7s0",
+                "mac":"00:e0:4c:68:a1:d9"
+            },
+            {
+                "name":"enp10s0",
                 "mac":"44:8a:5b:c3:92:70"
             }
         ],
@@ -443,7 +443,7 @@
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/node5",
-                "nicIndex":0
+                "nicIndex":1
             }
         ]
     },
@@ -771,14 +771,14 @@
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/main4",
-                "nicIndex":3
+                "nicIndex":2
             },
             {
                 "name":"/ndn/edu/pkusz/main6",
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/main6",
-                "nicIndex":2
+                "nicIndex":3
             }
         ]
     },
@@ -820,14 +820,14 @@
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/main6",
-                "nicIndex":2
+                "nicIndex":3
             },
             {
                 "name":"/ndn/edu/pkusz/main2",
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/main2",
-                "nicIndex":3
+                "nicIndex":2
             }
         ]
     },
@@ -869,14 +869,14 @@
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/main2",
-                "nicIndex":2
+                "nicIndex":3
             },
             {
                 "name":"/ndn/edu/pkusz/main4",
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/main4",
-                "nicIndex":3
+                "nicIndex":2
             },
             {
                 "name":"/ndn/edu/pkusz/node5",
