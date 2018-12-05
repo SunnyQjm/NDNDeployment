@@ -53,8 +53,8 @@ do
 
     transName=$(echo ${routerName//\//.})
     transName=$(echo ${transName#.})
-    echo $nics | jq '.' >> $TEMP_DIR/$transName.nics
-    echo $nbs | jq '.' >> $TEMP_DIR/$transName.nbs
+    echo $nics | jq '.' > $TEMP_DIR/$transName.nics
+    echo $nbs | jq '.' > $TEMP_DIR/$transName.nbs
 done
 
 
@@ -64,13 +64,13 @@ transName=$(echo ${transName#.})
 myNbs=$(cat $TEMP_DIR/$transName.nbs)
 myNics=$(cat $TEMP_DIR/$transName.nics)
 myNbsNum=`echo $nbs | jq '.|length'`
-let 'myNbsNum = myNbsNum - 1'
+let 'myNbsNum=myNbsNum-1'
 
 for i in `seq 0 $myNbsNum`
 do
     # 得到邻居的名字
     neighbourName=$(echo $nbs | jq -r ".[$i].name")
-    myIndex=$(echo $nbs | jq -r ".[$i].name")
+    myIndex=$(echo $nbs | jq -r ".[$i].nicIndex")
     
     localUri=dev://$(echo $myNics | jq -r ".[$myIndex].name")
 
@@ -80,12 +80,19 @@ do
     transName=$(echo ${transName#.})
     neighbourNics=$(cat $TEMP_DIR/$transName.nics)
     neighbourNbs=$(cat $TEMP_DIR/$transName.nbs)
-    neighbourNbsNum=`echo $neighbourNbs | jq '.length'`
-    let 'neighbourNbsNum = neighbourNbsNum - 1'
+    neighbourNbsNum=`echo $neighbourNbs | jq '.|length'`
+    #echo $neighbourNbs
+    #echo neighbourNbsNum: $neighbourNbsNum
+    let 'neighbourNbsNum=neighbourNbsNum-1'
+    #echo neighbourNbsNum: $neighbourNbsNum
     for j in `seq 0 $neighbourNbsNum`
     do
-        if [ $(echo neighbourNbs | jq -r ".[$j].name") -eq routerName ]; then
-            tempIdx=$(echo neighbourNbs | jq -r ".[$j].nicIndex")
+        judgeName=$(echo $neighbourNbs | jq -r ".[$j].name")
+        echo $judgeName
+        if [ "$judgeName"x == "$routerName"x ]; then
+            tempIdx=$(echo $neighbourNbs | jq -r ".[$j].nicIndex")
+            #echo tempIdx: $tempIdx
+            #echo $neighbourNics | jq -r ".[$tempIdx].mac"
             remoteUri=ether://[$(echo $neighbourNics | jq -r ".[$tempIdx].mac")]
         fi
     done
@@ -93,7 +100,7 @@ do
     # 为该邻居创建Face
     echo "正在为邻居$neighbourName创建Face"
     echo "nfdc face create remote $remoteUri local $localUri" 
-    #nfdc face create remote $remoteUri local $localUri 
+    nfdc face create remote $remoteUri local $localUri 
     
 done
 

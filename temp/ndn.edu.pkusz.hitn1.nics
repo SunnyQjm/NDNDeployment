@@ -1,0 +1,22 @@
+[
+  {
+    "name": "enp1s0f0",
+    "mac": "a0:36:9f:85:bf:30"
+  },
+  {
+    "name": "enp1s0f1",
+    "mac": "a0:36:9f:85:bf:31"
+  },
+  {
+    "name": "enp1s0f2",
+    "mac": "a0:36:9f:85:bf:32"
+  },
+  {
+    "name": "enp1s0f3",
+    "mac": "a0:36:9f:85:bf:33"
+  },
+  {
+    "name": "enp3s0",
+    "mac": "fc:aa:14:22:80:b4"
+  }
+]

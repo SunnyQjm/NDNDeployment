@@ -1,0 +1,30 @@
+[
+  {
+    "name": "/ndn/edu/pkusz/pkun1",
+    "network": "/ndn",
+    "site": "/edu/pkusz",
+    "router": "/pkun1",
+    "nicIndex": 0
+  },
+  {
+    "name": "/ndn/edu/pkusz/node0",
+    "network": "/ndn",
+    "site": "/edu/pkusz",
+    "router": "/node0",
+    "nicIndex": 1
+  },
+  {
+    "name": "/ndn/edu/pkusz/main4",
+    "network": "/ndn",
+    "site": "/edu/pkusz",
+    "router": "/main4",
+    "nicIndex": 2
+  },
+  {
+    "name": "/ndn/edu/pkusz/main6",
+    "network": "/ndn",
+    "site": "/edu/pkusz",
+    "router": "/main6",
+    "nicIndex": 3
+  }
+]

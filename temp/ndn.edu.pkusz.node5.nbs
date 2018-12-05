@@ -1,0 +1,23 @@
+[
+  {
+    "name": "/ndn/edu/pkusz/main6",
+    "network": "/ndn",
+    "site": "/edu/pkusz",
+    "router": "/main6",
+    "nicIndex": 2
+  },
+  {
+    "name": "/ndn/edu/pkusz/node1",
+    "network": "/ndn",
+    "site": "/edu/pkusz",
+    "router": "/node1",
+    "nicIndex": 0
+  },
+  {
+    "name": "/ndn/edu/pkusz/node4",
+    "network": "/ndn",
+    "site": "/edu/pkusz",
+    "router": "/node4",
+    "nicIndex": 1
+  }
+]
