@@ -57,9 +57,12 @@ do
     echo $nbs | jq '.' >> $TEMP_DIR/$transName.nbs
 done
 
+
+transName=$(echo ${routerName//\//.})
+transName=$(echo ${transName#.})
 # 当前节点的邻居信息
-myNbs=$(cat $TEMP_DIR/$routerName.nbs)
-myNics=$(cat $TEMP_DIR/$routerName.nics)
+myNbs=$(cat $TEMP_DIR/$transName.nbs)
+myNics=$(cat $TEMP_DIR/$transName.nics)
 myNbsNum=`echo $nbs | jq '.|length'`
 let 'myNbsNum = myNbsNum - 1'
 
@@ -73,8 +76,10 @@ do
 
 
     # 得到该邻居的网卡信息
-    neighbourNics=$(cat $TEMP_DIR/$neighbourName.nics)
-    neighbourNbs=$(cat $TEMP_DIR/$neighbourName.nbs)
+    transName=$(echo ${neighbourName//\//.})
+    transName=$(echo ${transName#.})
+    neighbourNics=$(cat $TEMP_DIR/$transName.nics)
+    neighbourNbs=$(cat $TEMP_DIR/$transName.nbs)
     neighbourNbsNum=`echo $neighbourNbs | jq '.length'`
     let 'neighbourNbsNum = neighbourNbsNum - 1'
     for j in `seq 0 $neighbourNbsNum`
