@@ -69,6 +69,9 @@ function deal(){
     "clone")
         ./clone.sh $username $password $ip $routerName $mapPort
         ;;
+    "start")
+        ./start.sh $username $password $ip $routerName $mapPort
+        ;;
     "stop")
         ./stop.sh $username $password $ip $routerName $mapPort
     esac
