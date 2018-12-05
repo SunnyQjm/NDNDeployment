@@ -29,7 +29,7 @@ function ensureDir() {
 # 创建temp文件夹存放中转数据
 ensureDir ./temp
 
-TEMP_DIR=./temp
+# TEMP_DIR=./temp
 
 ##########################################
 ### 具体执行部署到一个节点的操作
@@ -78,26 +78,26 @@ function deal(){
      echo 
     fi
 
-    transName=$(echo ${routerName//\//.})
-    transName=$(echo ${transName#.})
-    echo $nics | jq '.' >> $TEMP_DIR/$transName.nics
-    echo $nbs | jq '.' >> $TEMP_DIR/$transName.nbs
+    # transName=$(echo ${routerName//\//.})
+    # transName=$(echo ${transName#.})
+    # echo $nics | jq '.' >> $TEMP_DIR/$transName.nics
+    # echo $nbs | jq '.' >> $TEMP_DIR/$transName.nbs
 
     case $command in
     "deploy")
-        ./deploy.sh $username $password $ip $routerName $mapPort
+        ./deploy.sh $username $password $ip $routerName $mapPort $index
         ;;
     "update")
-        ./update.sh $username $password $ip $routerName $mapPort
+        ./update.sh $username $password $ip $routerName $mapPort $index
         ;;
     "clone")
-        ./clone.sh $username $password $ip $routerName $mapPort
+        ./clone.sh $username $password $ip $routerName $mapPort $index
         ;;
     "start")
-        ./start.sh $username $password $ip $routerName $mapPort
+        ./start.sh $username $password $ip $routerName $mapPort $index
         ;;
     "stop")
-        ./stop.sh $username $password $ip $routerName $mapPort
+        ./stop.sh $username $password $ip $routerName $mapPort $index
         ;;
     esac
 

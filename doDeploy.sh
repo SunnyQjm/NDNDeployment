@@ -4,14 +4,16 @@ password=$2
 ip=$3
 routerName=$4
 mapPort=$5
+index=$6;
 
-TEMP_DIR=.temp
+# 读取网络拓扑配置
+json=`cat lab_topology.json`
 
-transName=$(echo ${routerName//\//.})
-transName=$(echo ${transName#.})
+# 保存配置列表
+list=`echo $json | jq '.'`
 
-nbs=$(cat $TEMP_DIR/$transName.nbs)
-nics=$(cat $TEMP_DIR/$transName.nics)
+nics=$(echo $list | jq ".[$index].nics")
+nbs=$(echo $list | jq ".[$index].nics")
 
 echo $nbs
 echo $nics
