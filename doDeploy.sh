@@ -49,6 +49,7 @@ do
 done
 
 
+echo $routerName
 transName=$(echo ${routerName//\//.})
 transName=$(echo ${transName#.})
 # 当前节点的邻居信息
