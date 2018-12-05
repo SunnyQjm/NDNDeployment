@@ -11,7 +11,6 @@ mapPort=$5
 set timeout -1
 
 spawn ssh root@$ip -p$mapPort "
-sudo apt update
 sudo upgrade -y
 sudo apt install git jq -y
 "
