@@ -13,7 +13,7 @@ set timeout -1
 spawn ssh root@$ip -p$mapPort "
 sudo apt update
 sudo apt autoremove
-sudo upgrade
+sudo upgrade -y
 sudo apt install git jq -y
 "
 expect {
