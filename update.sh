@@ -7,7 +7,7 @@ ip=$3
 routerName=$4
 mapPort=$5
 /usr/bin/expect << EOD
-
+set timeout -1
 
 spawn ssh $username@$ip -p$mapPort "
 cd Documents/NDNDeployment;
