@@ -39,19 +39,10 @@ length=$(( $length - 1 ))
 # 将节点信息和邻居信息输出到temp文件夹
 for index in `seq 0 $length`
 do
-    routerName=$(echo $list | jq -r ".[$index].name")
-    network=$(echo $list | jq -r ".[$index].network")
-    site=$(echo $list | jq -r ".[$index].site")
-    router=$(echo $list | jq -r ".[$index].router")
-    mapPort=$(echo $list | jq -r ".[$index].mapPort")
-    ip=$(echo $list | jq -r ".[$index].ip")
-    username=$(echo $list | jq -r ".[$index].username")
-    password=$(echo $list | jq -r ".[$index].password")
-
-    nics=$(echo $list | jq ".[$index].nics")
+    rName=$(echo $list | jq -r ".[$index].name")
     nbs=$(echo $list | jq  ".[$index].nbs")
 
-    transName=$(echo ${routerName//\//.})
+    transName=$(echo ${rName//\//.})
     transName=$(echo ${transName#.})
     echo $nics | jq '.' > $TEMP_DIR/$transName.nics
     echo $nbs | jq '.' > $TEMP_DIR/$transName.nbs
