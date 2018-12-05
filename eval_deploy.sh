@@ -69,8 +69,8 @@ function deal(){
     "clone")
         ./clone.sh $username $password $ip $routerName $mapPort
         ;;
-    "kill")
-        ./doKill.sh $username $password $ip $routerName $mapPort
+    "stop")
+        ./stop.sh $username $password $ip $routerName $mapPort
     esac
     echo "========================================================="
 }
