@@ -6,14 +6,15 @@ password=$2
 ip=$3
 routerName=$4
 mapPort=$5
-index=$6
 
 /usr/bin/expect << EOD
 set timeout -1
 
-spawn ssh $username@$ip -p$mapPort "
-cd Documents/NDNDeployment
-./doDeploy.sh $username $password $ip $routerName $mapPort $index
+spawn ssh root@$ip -p$mapPort "
+sudo apt update
+sudo apt autoremove
+sudo upgrade
+sudo apt install git jq -y
 "
 expect {
     "(yes/no)?" {

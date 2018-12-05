@@ -84,6 +84,9 @@ function deal(){
     # echo $nbs | jq '.' >> $TEMP_DIR/$transName.nbs
 
     case $command in
+    "prepare")
+        ./installRequired.sh $username $password $ip $routerName $mapPort $index
+        ;;
     "deploy")
         ./deploy.sh $username $password $ip $routerName $mapPort $index
         ;;
