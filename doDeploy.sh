@@ -8,7 +8,22 @@ idx=$6;
 
 cd ~/Documents/NDNDeployment
 
+##########################################
+### 确保一个文件夹存在，不存在则创建
+### @param dir
+##########################################
+function ensureDir() {
+    dir=$1
+    if [ ! -d "$dir" ]; then
+        echo "文件夹${dir}不存在，正在创建"
+        mkdir -p $dir
+    fi
+}
+
 TEMP_DIR='./temp'
+# 创建temp文件夹存放中转数据
+ensureDir $TEMP_DIR
+
 
 
 # 读取网络拓扑配置
