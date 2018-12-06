@@ -4,7 +4,17 @@ password=$2
 ip=$3
 routerName=$4
 mapPort=$5
-idx=$6;
+idx=$6
+
+echo 1: $1
+echo 2: $2
+echo 3: $3
+echo 4: $4
+echo 5: $5
+echo 6: $6
+
+echo username: $username
+echo inputName: $routerName
 
 cd ~/Documents/NDNDeployment
 
@@ -41,6 +51,7 @@ for index in `seq 0 $length`
 do
     rName=$(echo $list | jq -r ".[$index].name")
     nbs=$(echo $list | jq  ".[$index].nbs")
+    nics=$(echo $list | jq ".[$index].nics")
 
     transName=$(echo ${rName//\//.})
     transName=$(echo ${transName#.})
@@ -51,17 +62,25 @@ done
 
 transName=$(echo ${routerName//\//.})
 transName=$(echo ${transName#.})
+
+echo transName: $transName
 # 当前节点的邻居信息
 myNbs=$(cat $TEMP_DIR/$transName.nbs)
 myNics=$(cat $TEMP_DIR/$transName.nics)
+
+echo myNbs:
+echo $myNbs | jq '.'
+echo myNics:
+echo $myNics | jq '.'
 myNbsNum=`echo $nbs | jq '.|length'`
 let 'myNbsNum=myNbsNum-1'
 
+echo ~~begin deal neighbout~~
 for i in `seq 0 $myNbsNum`
 do
     # 得到邻居的名字
-    neighbourName=$(echo $nbs | jq -r ".[$i].name")
-    myIndex=$(echo $nbs | jq -r ".[$i].nicIndex")
+    neighbourName=$(echo $myNbs | jq -r ".[$i].name")
+    myIndex=$(echo $myNbs | jq -r ".[$i].nicIndex")
     
     localUri=dev://$(echo $myNics | jq -r ".[$myIndex].name")
 
