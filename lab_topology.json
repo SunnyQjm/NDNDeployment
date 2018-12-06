@@ -47,7 +47,7 @@
                 "nicIndex":1
             },
             {
-                "name":"/ndn/edu/pkusz/mainn2",
+                "name":"/ndn/edu/pkusz/main2",
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/mainn2",
@@ -727,7 +727,7 @@
         "id":13,
         "ip":"lab.pkusz.qjm253.cn",
         "mapPort":9764,
-        "username":"mainn2",
+        "username":"main2",
         "password":"26035354",
         "nics":[
             {
