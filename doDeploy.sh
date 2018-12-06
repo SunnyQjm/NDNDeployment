@@ -6,16 +6,6 @@ routerName=$4
 mapPort=$5
 idx=$6
 
-echo 1: $1
-echo 2: $2
-echo 3: $3
-echo 4: $4
-echo 5: $5
-echo 6: $6
-
-echo username: $username
-echo inputName: $routerName
-
 cd ~/Documents/NDNDeployment
 
 ##########################################
@@ -59,12 +49,9 @@ do
     echo $nbs | jq '.' > $TEMP_DIR/$transName.nbs
 done
 
-
-echo $routerName
 transName=$(echo ${routerName//\//.})
 transName=$(echo ${transName#.})
 
-echo transName: $transName
 # 当前节点的邻居信息
 myNbs=$(cat $TEMP_DIR/$transName.nbs)
 myNics=$(cat $TEMP_DIR/$transName.nics)
@@ -73,41 +60,45 @@ echo myNbs:
 echo $myNbs | jq '.'
 echo myNics:
 echo $myNics | jq '.'
-myNbsNum=`echo $nbs | jq '.|length'`
+myNbsNum=`echo $myNbs | jq '.|length'`
 let 'myNbsNum=myNbsNum-1'
 
-echo ~~begin deal neighbout~~
+echo ~~begin deal neighbour: $myNbsNum~~
 for i in `seq 0 $myNbsNum`
 do
+    echo $i;
     # 得到邻居的名字
     neighbourName=$(echo $myNbs | jq -r ".[$i].name")
     myIndex=$(echo $myNbs | jq -r ".[$i].nicIndex")
     
-    localUri=dev://$(echo $myNics | jq -r ".[$myIndex].name")
-
+    localUri=dev://$(echo $myNbs | jq -r ".[$i].localDev")
+    remoteUri=ether://[$(echo $myNbs | jq -r ".[$i].targetMac")]
 
     # 得到该邻居的网卡信息
-    transName=$(echo ${neighbourName//\//.})
-    transName=$(echo ${transName#.})
-    neighbourNics=$(cat $TEMP_DIR/$transName.nics)
-    neighbourNbs=$(cat $TEMP_DIR/$transName.nbs)
-    neighbourNbsNum=`echo $neighbourNbs | jq '.|length'`
+    #transName=$(echo ${neighbourName//\//.})
+    #transName=$(echo ${transName#.})
+    #neighbourNics=$(cat $TEMP_DIR/$transName.nics)
+    #neighbourNbs=$(cat $TEMP_DIR/$transName.nbs)
+    #neighbourNbsNum=`echo $neighbourNbs | jq '.|length'`
     #echo $neighbourNbs
     #echo neighbourNbsNum: $neighbourNbsNum
-    let 'neighbourNbsNum=neighbourNbsNum-1'
+    #let 'neighbourNbsNum=neighbourNbsNum-1'
     #echo neighbourNbsNum: $neighbourNbsNum
-    for j in `seq 0 $neighbourNbsNum`
-    do
-        judgeName=$(echo $neighbourNbs | jq -r ".[$j].name")
-        echo $judgeName
-        if [ "$judgeName"x == "$routerName"x ]; then
-            tempIdx=$(echo $neighbourNbs | jq -r ".[$j].nicIndex")
-            #echo tempIdx: $tempIdx
-            #echo $neighbourNics | jq -r ".[$tempIdx].mac"
-            remoteUri=ether://[$(echo $neighbourNics | jq -r ".[$tempIdx].mac")]
-        fi
-    done
+    #for j in `seq 0 $neighbourNbsNum`
+    #do
+    #    judgeName=$(echo $neighbourNbs | jq -r ".[$j].name")
+    #    echo $judgeName
+    #    if [ "$judgeName"x == "$routerName"x ]; then
+    #        tempIdx=$(echo $neighbourNbs | jq -r ".[$j].nicIndex")
+    #        #echo tempIdx: $tempIdx
+    #        #echo $neighbourNics | jq -r ".[$tempIdx].mac"
+    #        remoteUri=ether://[$(echo $neighbourNics | jq -r ".[$tempIdx].mac")]
+    #    fi
+    #done
 
+    # 如果存在Face则删除
+    nfdc face destroy $remoteUri
+    
     # 为该邻居创建Face
     echo "正在为邻居$neighbourName创建Face"
     echo "nfdc face create remote $remoteUri local $localUri" 

@@ -7,13 +7,10 @@ ip=$3
 name=$4
 mapPort=$5
 /usr/bin/expect << EOD
-
+set timeout -1
 
 spawn ssh root@$ip -p$mapPort "
-echo begin
-nfd-start
-echo end
-
+nfd-status
 "
 expect {
     "(yes/no)?" {

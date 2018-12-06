@@ -8,6 +8,8 @@ routerName=$4
 mapPort=$5
 index=$6
 
+#./doDeploy.sh $username $password $ip $routerName $mapPort $index
+#exit
 /usr/bin/expect << EOD
 set timeout -1
 
