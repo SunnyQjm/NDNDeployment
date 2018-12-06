@@ -11,8 +11,8 @@ mapPort=$5
 set timeout -1
 
 spawn ssh root@$ip -p$mapPort "
-sudo apt upgrade -y
-sudo apt install git jq -y
+sudo apt update
+sudo apt install git jq screen -y
 "
 expect {
     "(yes/no)?" {

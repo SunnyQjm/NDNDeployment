@@ -10,7 +10,10 @@ mapPort=$5
 set timeout -1
 
 spawn ssh root@$ip -p$mapPort "
-nfd-status
+cd /home/$username/Documents/NDNDeployment
+killall nlsr
+./nlsr_configs/generate.sh
+nlsr -f ./nlsr_configs/nlsr.conf 
 "
 expect {
     "(yes/no)?" {

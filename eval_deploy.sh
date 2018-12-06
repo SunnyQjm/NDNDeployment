@@ -1,6 +1,7 @@
 #!/bin/bash
 
 command=$1
+ASYNC=$2
 DEBUG=0
 COUNT=0
 
@@ -85,25 +86,53 @@ function deal(){
 
     case $command in
     "prepare")
-        ./installRequired.sh $username $password $ip $routerName $mapPort $index
+        if [ $ASYNC -eq 1 ]; then
+            ./installRequired.sh $username $password $ip $routerName $mapPort $index &
+        else
+            ./installRequired.sh $username $password $ip $routerName $mapPort $index
+        fi
         ;;
     "deploy")
-        ./deploy.sh $username $password $ip $routerName $mapPort $index
+        if [ $ASYNC -eq 1 ]; then
+            ./deploy.sh $username $password $ip $routerName $mapPort $index &
+        else
+            ./deploy.sh $username $password $ip $routerName $mapPort $index
+        fi
         ;;
     "update")
-        ./update.sh $username $password $ip $routerName $mapPort $index
+        if [ $ASYNC -eq 1 ]; then
+         ./update.sh $username $password $ip $routerName $mapPort $index &
+        else
+            ./update.sh $username $password $ip $routerName $mapPort $index
+        fi
         ;;
     "clone")
-        ./clone.sh $username $password $ip $routerName $mapPort $index
+        if [ $ASYNC -eq 1 ]; then
+            ./clone.sh $username $password $ip $routerName $mapPort $index &
+        else
+            ./clone.sh $username $password $ip $routerName $mapPort $index
+        fi
         ;;
     "ifconfig")
-        ./ifconfig.sh $username $password $ip $routerName $mapPort $index
+        if [ $ASYNC -eq 1 ]; then
+            ./ifconfig.sh $username $password $ip $routerName $mapPort $index &
+        else
+            ./ifconfig.sh $username $password $ip $routerName $mapPort $index
+        fi
         ;;
     "start")
-        ./start.sh $username $password $ip $routerName $mapPort $index
+        if [ $ASYNC -eq 1 ]; then
+            ./start.sh $username $password $ip $routerName $mapPort $index &
+        else
+            ./start.sh $username $password $ip $routerName $mapPort $index
+        fi
         ;;
     "stop")
-        ./stop.sh $username $password $ip $routerName $mapPort $index
+        if [ $ASYNC -eq 1 ]; then
+            ./stop.sh $username $password $ip $routerName $mapPort $index &
+        else
+            ./stop.sh $username $password $ip $routerName $mapPort $index
+        fi
         ;;
     esac
 
