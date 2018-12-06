@@ -10,7 +10,10 @@ mapPort=$5
 
 
 spawn ssh root@$ip -p$mapPort "
+echo begin
 nfd-start
+echo end
+
 "
 expect {
     "(yes/no)?" {
