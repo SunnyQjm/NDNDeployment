@@ -12,7 +12,7 @@ set timeout -1
 spawn ssh root@$ip -p$mapPort "
 cd /home/$username/Documents/NDNDeployment
 killall nlsr
-./nlsr_configs/generate.sh
+./nlsr_configs/generate.sh $name $(pwd)
 nlsr -f ./nlsr_configs/nlsr.conf 
 "
 expect {

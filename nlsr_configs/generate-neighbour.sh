@@ -1,7 +1,8 @@
 #!/bin/bash
 name=$1
+path=$2
 
-TEMP_DIR=./temp
+TEMP_DIR=$path/temp
 transName=$(echo ${name//\//.})
 transName=$(echo ${transName#.})
 nbs=$(cat $TEMP_DIR/$transName.nbs)
