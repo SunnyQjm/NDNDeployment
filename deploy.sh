@@ -13,8 +13,8 @@ index=$6
 /usr/bin/expect << EOD
 set timeout -1
 
-spawn ssh $username@$ip -p$mapPort "
-cd Documents/NDNDeployment
+spawn ssh root@$ip -p$mapPort "
+cd /home/$username/Documents/NDNDeployment
 ./doDeploy.sh $username $password $ip $routerName $mapPort $index
 "
 expect {

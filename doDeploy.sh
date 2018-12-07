@@ -6,8 +6,6 @@ routerName=$4
 mapPort=$5
 idx=$6
 
-cd ~/Documents/NDNDeployment
-
 ##########################################
 ### 确保一个文件夹存在，不存在则创建
 ### @param dir
