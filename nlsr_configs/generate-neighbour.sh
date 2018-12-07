@@ -59,7 +59,7 @@ do
         name $neighbourName ; name prefix of the neighbor router consists
                             ; of network, site-name and router-name
         face-uri $faceUri   ; face uri of the face connected to the neighbor
-        link-cosr $linkCost ; cost of the connecting link to neighbor
+        link-cost $linkCost ; cost of the connecting link to neighbor
 
     }
 EOF

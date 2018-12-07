@@ -340,7 +340,7 @@
         "password":"xuruiedward",
         "nics":[
             {
-                "name":"enp9s0",
+                "name":"enp6s0",
                 "mac":"00:e0:4c:68:a1:8a"
             },
             {
@@ -348,11 +348,11 @@
                 "mac":"00:e0:4c:68:a1:8b"
             },
             {
-                "name":"enp7s0",
+                "name":"enp9s0",
                 "mac":"00:e0:4c:68:a1:8c"
             },
             {
-                "name":"enp6s0",
+                "name":"enp7s0",
                 "mac":"00:e0:4c:68:a1:8d"
             },
             {

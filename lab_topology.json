@@ -374,7 +374,7 @@
     "password": "xuruiedward",
     "nics": [
       {
-        "name": "enp9s0",
+        "name": "enp6s0",
         "mac": "00:e0:4c:68:a1:8a"
       },
       {
@@ -382,11 +382,11 @@
         "mac": "00:e0:4c:68:a1:8b"
       },
       {
-        "name": "enp7s0",
+        "name": "enp9s0",
         "mac": "00:e0:4c:68:a1:8c"
       },
       {
-        "name": "enp6s0",
+        "name": "enp7s0",
         "mac": "00:e0:4c:68:a1:8d"
       },
       {
@@ -402,7 +402,7 @@
         "router": "/pkun2",
         "nicIndex": 3,
         "targetMac": "a0:36:9f:85:c4:9c",
-        "localDev": "enp6s0"
+        "localDev": "enp7s0"
       },
       {
         "name": "/ndn/edu/pkusz/main2",
@@ -411,7 +411,7 @@
         "router": "/main2",
         "nicIndex": 2,
         "targetMac": "00:1b:21:09:09:11",
-        "localDev": "enp7s0"
+        "localDev": "enp9s0"
       },
       {
         "name": "/ndn/edu/pkusz/node1",
@@ -429,7 +429,7 @@
         "router": "/node2",
         "nicIndex": 0,
         "targetMac": "a0:36:9f:85:a4:26",
-        "localDev": "enp9s0"
+        "localDev": "enp6s0"
       }
     ]
   },
