@@ -340,19 +340,19 @@
         "password":"xuruiedward",
         "nics":[
             {
-                "name":"enp6s0",
+                "name":"enp9s0",
                 "mac":"00:e0:4c:68:a1:8a"
             },
             {
-                "name":"enp7s0",
+                "name":"enp8s0",
                 "mac":"00:e0:4c:68:a1:8b"
             },
             {
-                "name":"enp8s0",
+                "name":"enp7s0",
                 "mac":"00:e0:4c:68:a1:8c"
             },
             {
-                "name":"enp9s0",
+                "name":"enp6s0",
                 "mac":"00:e0:4c:68:a1:8d"
             },
             {
@@ -403,19 +403,19 @@
         "password":"xuruiedward",
         "nics":[
             {
-                "name":"enp4s0",
+                "name":"enp7s0",
                 "mac":"00:e0:4c:68:a1:d6"
             },
             {
-                "name":"enp5s0",
+                "name":"enp6s0",
                 "mac":"00:e0:4c:68:a1:d7"
             },
             {
-                "name":"enp6s0",
+                "name":"enp5s0",
                 "mac":"00:e0:4c:68:a1:d8"
             },
             {
-                "name":"enp7s0",
+                "name":"enp4s0",
                 "mac":"00:e0:4c:68:a1:d9"
             },
             {
