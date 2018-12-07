@@ -6,13 +6,18 @@ password=$2
 ip=$3
 name=$4
 mapPort=$5
-/usr/bin/expect << EOD
 
+HOME=/home/$username/Documents/NDNDeployment
+
+/usr/bin/expect << EOD
+set timeout -1
 
 spawn ssh root@$ip -p$mapPort "
-cd Documents/NDNDeployment;
-./kill.sh; 
-echo $name kill finish!!
+cd $HOME
+killall nlsr
+$HOME/nlsr_configs/generate.sh $name $HOME
+mv nlsr.conf /usr/local/etc/ndn/nlsr.conf
+nlsr -f /usr/local/etc/ndn/nlsr.conf 
 "
 expect {
     "(yes/no)?" {

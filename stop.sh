@@ -10,7 +10,8 @@ mapPort=$5
 
 
 spawn ssh root@$ip -p$mapPort "
-nfd-stop
+cd /home/$username/Documents/NDNDeployment
+killall nlsr
 "
 expect {
     "(yes/no)?" {

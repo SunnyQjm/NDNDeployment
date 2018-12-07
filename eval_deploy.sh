@@ -5,6 +5,10 @@ ASYNC=$2
 DEBUG=0
 COUNT=0
 
+if [ ! -n "$ASYNC" ]; then
+    ASYNC=0
+fi
+
 # 读取网络拓扑配置
 json=`cat lab_topology.json`
 
@@ -120,11 +124,18 @@ function deal(){
             ./ifconfig.sh $username $password $ip $routerName $mapPort $index
         fi
         ;;
-    "start")
+    "start-nfd")
         if [ $ASYNC -eq 1 ]; then
-            ./start.sh $username $password $ip $routerName $mapPort $index &
+            ./start-nfd.sh $username $password $ip $routerName $mapPort $index &
         else
-            ./start.sh $username $password $ip $routerName $mapPort $index
+            ./start-nfd.sh $username $password $ip $routerName $mapPort $index
+        fi
+        ;;
+    "start-nlsr")
+        if [ $ASYNC -eq 1 ]; then
+            ./start-nlsr.sh $username $password $ip $routerName $mapPort $index &
+        else
+            ./start-nlsr.sh $username $password $ip $routerName $mapPort $index
         fi
         ;;
     "stop")

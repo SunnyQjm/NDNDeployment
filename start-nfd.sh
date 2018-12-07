@@ -6,13 +6,14 @@ password=$2
 ip=$3
 name=$4
 mapPort=$5
-/usr/bin/expect << EOD
 
+HOME=/home/$username/Documents/NDNDeployment
+
+/usr/bin/expect << EOD
+set timeout -1
 
 spawn ssh root@$ip -p$mapPort "
-cd Documents/NDNDeployment;
-./kill.sh; 
-echo $name kill finish!!
+nfd-status
 "
 expect {
     "(yes/no)?" {
