@@ -561,7 +561,7 @@
         "site": "/edu/pkusz",
         "router": "/node6",
         "nicIndex": 0,
-        "targetMac": "2c:53:4a:00:de:c6",
+        "targetMac": "2c:53:4a:00:de:c7",
         "localDev": "enp1s0f0"
       }
     ]
@@ -685,7 +685,7 @@
         "site": "/edu/pkusz",
         "router": "/node6",
         "nicIndex": 2,
-        "targetMac": "2c:53:4a:00:de:c7",
+        "targetMac": "2c:53:4a:00:de:c6",
         "localDev": "enp1s0f2"
       }
     ]
@@ -782,18 +782,18 @@
         "network": "/ndn",
         "site": "/edu/pkusz",
         "router": "/node2",
-        "nicIndex": 0,
+        "nicIndex": 1,
         "targetMac": "a0:36:9f:85:a4:24",
-        "localDev": "enp3s0f0"
+        "localDev": "enp3s0f1"
       },
       {
         "name": "/ndn/edu/pkusz/node4",
         "network": "/ndn",
         "site": "/edu/pkusz",
         "router": "/node4",
-        "nicIndex": 1,
+        "nicIndex": 0,
         "targetMac": "00:1b:21:08:11:23",
-        "localDev": "enp3s0f1"
+        "localDev": "enp3s0f0"
       }
     ]
   },
