@@ -344,11 +344,11 @@
                 "mac":"00:e0:4c:68:a1:8a"
             },
             {
-                "name":"enp5s0",
+                "name":"enp4s0",
                 "mac":"00:e0:4c:68:a1:8b"
             },
             {
-                "name":"enp4s0",
+                "name":"enp5s0",
                 "mac":"00:e0:4c:68:a1:8c"
             },
             {
@@ -373,14 +373,14 @@
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/main2",
-                "nicIndex":2
+                "nicIndex":1
             },
             {
                 "name":"/ndn/edu/pkusz/node1",
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/node1",
-                "nicIndex":1
+                "nicIndex":2
             },
             {
                 "name":"/ndn/edu/pkusz/node2",
@@ -407,15 +407,15 @@
                 "mac":"00:e0:4c:68:a1:d6"
             },
             {
-                "name":"enp6s0",
+                "name":"enp5s0",
                 "mac":"00:e0:4c:68:a1:d7"
             },
             {
-                "name":"enp7s0",
+                "name":"enp6s0",
                 "mac":"00:e0:4c:68:a1:d8"
             },
             {
-                "name":"enp5s0",
+                "name":"enp7s0",
                 "mac":"00:e0:4c:68:a1:d9"
             },
             {
@@ -429,21 +429,21 @@
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/node0",
-                "nicIndex":2
+                "nicIndex":3
             },
             {
                 "name":"/ndn/edu/pkusz/node3",
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/node3",
-                "nicIndex":3
+                "nicIndex":1
             },
             {
                 "name":"/ndn/edu/pkusz/node5",
                 "network":"/ndn",
                 "site":"/edu/pkusz",
                 "router":"/node5",
-                "nicIndex":1
+                "nicIndex":2
             }
         ]
     },
