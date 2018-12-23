@@ -83,5 +83,15 @@ cloneOrUpdate ndn-tools https://github.com/named-data/ndn-tools/archive/ndn-tool
 ./waf
 sudo ./waf install
 
+# install ndn-cpp
+sudo apt install build-essential libssl-dev libsqlite3-dev libprotobuf-dev protobuf-compiler \
+    liblog4cxx-dev doxygen libboost-all-dev -y
+cloneOrUpdate ndn-cpp https://github.com/named-data/ndn-cpp/archive/v0.15.tar.gz
+./configure
+make
+sudo make install
+
+# install iniparser jsoncpp
+sudo apt install libiniparser-dev libjsoncpp-dev -y
 # enforce loading lib
 sudo ldconfig
