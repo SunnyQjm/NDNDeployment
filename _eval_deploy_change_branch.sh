@@ -9,7 +9,7 @@ index=$6
 branch_name=$7
 sshArgs=$8
 
-PROJ_DIR=/home/${username}/Documents/ip-ndn-stack_cpp
+PROJ_DIR=/home/${username}/Documents/NDNDeployment
 DEPLOY_DIR=${PROJ_DIR}/deployment
 
 #./doDeploy.sh $username $password $ip $routerName $mapPort $index

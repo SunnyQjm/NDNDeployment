@@ -8,7 +8,7 @@ mapPort=$5
 index=$6
 sshArgs=$7
 
-PROJ_DIR=/home/${username}/Documents/ip-ndn-stack_cpp
+PROJ_DIR=/home/${username}/Documents/NDNDeployment
 DEPLOY_DIR=${PROJ_DIR}/deployment
 
 #./doDeploy.sh $username $password $ip $routerName $mapPort $index

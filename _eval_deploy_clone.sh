@@ -8,7 +8,7 @@ mapPort=$5
 index=$6
 sshArgs=$7
 
-PROJ_DIR=/home/${username}/Documents/ip-ndn-stack_cpp
+PROJ_DIR=/home/${username}/Documents/NDNDeployment
 DEPLOY_DIR=${PROJ_DIR}/deployment
 
 #./doDeploy.sh $username $password $ip $routerName $mapPort $index
@@ -17,7 +17,7 @@ DEPLOY_DIR=${PROJ_DIR}/deployment
 set timeout -1
 spawn ssh root@${ip} -p${mapPort} ${sshArgs} "
 cd /home/${username}/Documents
-sudo git clone https://github.com/SunnyQjm/ip-ndn-stack_cpp.git
+sudo git clone https://github.com/SunnyQjm/NDNDeployment.git
 "
 expect {
     "(yes/no)?" {

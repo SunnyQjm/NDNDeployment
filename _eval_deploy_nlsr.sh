@@ -11,7 +11,7 @@ site=$8
 router=$9
 sshArgs=$10
 
-PROJ_DIR=/home/${username}/Documents/ip-ndn-stack_cpp
+PROJ_DIR=/home/${username}/Documents/NDNDeployment
 DEPLOY_DIR=${PROJ_DIR}/deployment
 
 #./doDeploy.sh $username $password $ip $routerName $mapPort $index
