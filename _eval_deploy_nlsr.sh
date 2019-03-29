@@ -9,10 +9,10 @@ index=$6
 network=$7
 site=$8
 router=$9
-sshArgs=$10
+sshArgs=${10}
 
 PROJ_DIR=/home/${username}/Documents/NDNDeployment
-DEPLOY_DIR=${PROJ_DIR}/deployment
+DEPLOY_DIR=${PROJ_DIR}
 
 #./doDeploy.sh $username $password $ip $routerName $mapPort $index
 #exit
