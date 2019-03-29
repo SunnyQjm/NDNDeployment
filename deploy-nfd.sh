@@ -57,8 +57,10 @@ function cloneOrUpdate() {
     tar xf ${name}.tar.gz -C ${name} --strip 1
     cd ${name}
 
-    # 有些项目没有版本号，手动输出一个版本号
-    echo ${version} > VERSION
+    if [[ ! -f ${name}/VERSION ]]; then
+        # 有些项目没有版本号，手动输出一个版本号
+        echo ${version} > VERSION
+    fi
 }
 
 # install nfd use apt
