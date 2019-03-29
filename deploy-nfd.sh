@@ -58,7 +58,7 @@ function cloneOrUpdate() {
     cd ${name}
 
     # 有些项目没有版本号，手动输出一个版本号
-    echo "${version}" > VERSION
+    echo ${version} > VERSION
 }
 
 # install nfd use apt
