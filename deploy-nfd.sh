@@ -3,7 +3,7 @@
 ####################################################
 ######## 本脚本用于安装运行NFD需要的环境
 ###################################################$
-
+FORCE_UPDATE=$1
 
 NDN_CXX_VERSION=0.6.5
 NDN_NFD_VERSION=0.6.5
@@ -16,14 +16,19 @@ DEFAULT_DIR=~/Documents
 
 function ensureDir() {
     dir=$1
+    if [[ ${FORCE_UPDATE} -eq 1 ]]; then
+            rm -r ${dir}
+    fi
     if [[ ! -d "$dir" ]]; then
         echo "文件夹${dir}不存在，正在创建"
+
         mkdir -p ${dir}
     fi
 }
 
 # 确保Documents文件夹存在
 ensureDir ${DEFAULT_DIR}
+
 
 function cloneOrUpdate() {
     cd ${DEFAULT_DIR}
