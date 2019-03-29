@@ -5,7 +5,12 @@ ip=$3
 routerName=$4
 mapPort=$5
 index=$6
-sshArgs=$7
+force=$7
+sshArgs=$8
+
+if [[ ! -n "${force}" ]]; then
+    force=0
+fi
 
 PROJ_DIR=/home/${username}/Documents/NDNDeployment
 DEPLOY_DIR=${PROJ_DIR}/deployment
@@ -16,7 +21,7 @@ DEPLOY_DIR=${PROJ_DIR}/deployment
 set timeout -1
 spawn ssh root@${ip} -p${mapPort} ${sshArgs} "
 cd ${PROJ_DIR}
-sudo ./deploy-nfd.sh 1
+sudo ./deploy-nfd.sh ${force}
 "
 expect {
     "(yes/no)?" {

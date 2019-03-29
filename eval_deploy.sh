@@ -107,9 +107,9 @@ function deal(){
         ;;
     "upgrade")
         if [[ ${ASYNC} -eq 1 ]]; then
-            ./_eval_deploy_upgrade.sh ${username} ${password} ${ip} ${routerName} ${mapPort} ${index} "${sshArgs}" &
+            ./_eval_deploy_upgrade.sh ${username} ${password} ${ip} ${routerName} ${mapPort} ${index} ${args} "${sshArgs}" &
         else
-            ./_eval_deploy_upgrade.sh ${username} ${password} ${ip} ${routerName} ${mapPort} ${index} "${sshArgs}"
+            ./_eval_deploy_upgrade.sh ${username} ${password} ${ip} ${routerName} ${mapPort} ${index} ${args} "${sshArgs}"
         fi
         ;;
     "clone")
