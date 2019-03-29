@@ -16,9 +16,6 @@ DEFAULT_DIR=~/Documents
 
 function ensureDir() {
     dir=$1
-    if [[ ${FORCE_UPDATE} -eq 1 ]]; then
-            rm -r ${dir}
-    fi
     if [[ ! -d "$dir" ]]; then
         echo "文件夹${dir}不存在，正在创建"
 
@@ -34,6 +31,9 @@ function cloneOrUpdate() {
     cd ${DEFAULT_DIR}
     name=$1
     url=$2
+    if [[ ${FORCE_UPDATE} -eq 1 ]]; then
+        rm -r ${name} ${name}.tar.gz
+    fi
     if [[ ! -d ${name} ]];then
         mkdir ${name}
     fi
