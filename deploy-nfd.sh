@@ -57,9 +57,18 @@ function cloneOrUpdate() {
     tar xf ${name}.tar.gz -C ${name} --strip 1
     cd ${name}
 
+
+}
+
+function afterInstall() {
+    cd ${DEFAULT_DIR}
+    name=$1
+    url=$2
+    version=$3
     if [[ ! -f ${name}/VERSION ]]; then
+        echo "项目没有版本号，输出一个版本号："
         # 有些项目没有版本号，手动输出一个版本号
-        echo ${version} > VERSION
+        echo ${version} > ${name}/VERSION
     fi
 }
 
@@ -79,6 +88,7 @@ cloneOrUpdate ndn-cxx https://github.com/named-data/ndn-cxx/archive/ndn-cxx-${ND
 ./waf configure --enable-static
 ./waf
 sudo ./waf install
+afterInstall ndn-cxx https://github.com/named-data/ndn-cxx/archive/ndn-cxx-${NDN_CXX_VERSION}.tar.gz ${NDN_CXX_VERSION}
 
 # install nfd
 sudo apt-get install build-essential pkg-config libboost-all-dev \
@@ -91,6 +101,8 @@ tar xf websocket.tar.gz -C websocketpp/ --strip 1
 ./waf configure
 ./waf
 sudo ./waf install
+afterInstall NFD https://github.com/named-data/NFD/archive/NFD-${NDN_NFD_VERSION}.tar.gz ${NDN_NFD_VERSION}
+
 #check nfd.conf exists?
 #if [[ ! -f /usr/local/etc/ndn/nfd.conf ]];then
 #    cd /usr/local/etc/ndn
@@ -102,12 +114,15 @@ cloneOrUpdate ChronoSync https://github.com/named-data/ChronoSync/archive/${CHRO
 ./waf configure
 ./waf
 sudo ./waf install
+afterInstall ChronoSync https://github.com/named-data/ChronoSync/archive/${CHRONO_SYNC_VERSION}.tar.gz ${CHRONO_SYNC_VERSION}
+
 
 # install PSync
 cloneOrUpdate PSync https://github.com/named-data/PSync/archive/${PSYNC_VERSION}.tar.gz ${PSYNC_VERSION}
 ./waf configure
 ./waf
 sudo ./waf install
+afterInstall PSync https://github.com/named-data/PSync/archive/${PSYNC_VERSION}.tar.gz ${PSYNC_VERSION}
 
 
 # install NLSR
@@ -115,11 +130,13 @@ cloneOrUpdate NLSR https://github.com/named-data/NLSR/archive/NLSR-${NLSR_VERSIO
 ./waf configure
 ./waf
 sudo ./waf install
+afterInstall NLSR https://github.com/named-data/NLSR/archive/NLSR-${NLSR_VERSION}.tar.gz ${NLSR_VERSION}
+
 #check nlsr.conf exists?
-#if [[ ! -f /usr/local/etc/ndn/nlsr.conf ]];then
-#    cd /usr/local/etc/ndn
+if [[ ! -f /usr/local/etc/ndn/nlsr.conf ]];then
+    cd /usr/local/etc/ndn
     sudo cp nlsr.conf.sample nlsr.conf
-#fi
+fi
 
 #check /var/lib/nlsr exists?
 if [[ ! -d /var/lib/nlsr ]];then
@@ -132,6 +149,7 @@ cloneOrUpdate ndn-tools https://github.com/named-data/ndn-tools/archive/ndn-tool
 ./waf configure
 ./waf
 sudo ./waf install
+afterInstall ndn-tools https://github.com/named-data/ndn-tools/archive/ndn-tools-${NDN_TOOLS_VERSION}.tar.gz ${NDN_TOOLS_VERSION}
 
 ## install ndn-cpp
 #sudo apt install build-essential libssl-dev libsqlite3-dev libprotobuf-dev protobuf-compiler \
