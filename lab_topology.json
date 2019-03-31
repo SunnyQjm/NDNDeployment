@@ -56,6 +56,16 @@
         "ip": "59.42.210.189:6363",
         "target": "tcp://59.42.210.189:6363",
         "local": ""
+      },
+      {
+        "name": "/ndn/edu/js/node2",
+        "network": "/ndn",
+        "site": "/edu/js",
+        "router": "/node2",
+        "nicIndex": -1,
+        "ip": "110.43.33.15:6363",
+        "target": "tcp://110.43.33.15:6363",
+        "local": ""
       }
     ]
   },
@@ -272,6 +282,16 @@
         "nicIndex": 2,
         "target": "ether://[00:1b:21:09:10:85]",
         "local": "dev://enp4s0f2"
+      },
+      {
+        "name": "/ndn/edu/js/node3",
+        "network": "/ndn",
+        "site": "/edu/js",
+        "router": "/node3",
+        "nicIndex": -1,
+        "ip": "110.43.33.228:6363",
+        "target": "tcp://110.43.33.228:6363",
+        "local": ""
       }
     ]
   },
@@ -506,6 +526,152 @@
         "nicIndex": 3,
         "target": "ether://[00:1b:21:08:12:64]",
         "local": "dev://enp7s0f3"
+      }
+    ]
+  },
+  {
+    "name": "/ndn/edu/js/node1",
+    "network": "/ndn",
+    "site": "/edu/js",
+    "router": "/node1",
+    "id": 5,
+    "ip": "110.43.33.93",
+    "mapPort": 22,
+    "args": "-i ~/.ssh/js_id_rsa",
+    "username": "ubuntu",
+    "password": "123",
+    "nics": [
+      {
+        "name": "eth0",
+        "mac": "fa:16:3e:5e:35:b5"
+      },
+      {
+        "name": "eth1",
+        "mac": "fa:16:3e:32:69:87"
+      }
+    ],
+    "nbs": [
+      {
+        "name": "/ndn/edu/js/node2",
+        "network": "/ndn",
+        "site": "/edu/js",
+        "router": "/node2",
+        "nicIndex": 0,
+        "target": "ether://[fa:16:3e:62:8b:79]",
+        "local": "dev://eth0"
+      },
+      {
+        "name": "/ndn/edu/js/node3",
+        "network": "/ndn",
+        "site": "/edu/js",
+        "router": "/node3",
+        "nicIndex": 1,
+        "target": "ether://[fa:16:3e:0e:74:3c]",
+        "local": "dev://eth1"
+      }
+    ]
+  },
+  {
+    "name": "/ndn/edu/js/node2",
+    "network": "/ndn",
+    "site": "/edu/js",
+    "router": "/node2",
+    "id": 5,
+    "ip": "110.43.33.15",
+    "mapPort": 22,
+    "args": "-i ~/.ssh/js_id_rsa",
+    "username": "ubuntu",
+    "password": "123",
+    "nics": [
+      {
+        "name": "eth0",
+        "mac": "fa:16:3e:62:8b:79"
+      },
+      {
+        "name": "eth1",
+        "mac": "fa:16:3e:4f:ee:0b"
+      }
+    ],
+    "nbs": [
+      {
+        "name": "/ndn/edu/js/node1",
+        "network": "/ndn",
+        "site": "/edu/js",
+        "router": "/node1",
+        "nicIndex": 0,
+        "target": "ether://[fa:16:3e:5e:35:b5]",
+        "local": "dev://eth0"
+      },
+      {
+        "name": "/ndn/edu/js/node3",
+        "network": "/ndn",
+        "site": "/edu/js",
+        "router": "/node3",
+        "nicIndex": 1,
+        "target": "ether://[fa:16:3e:6f:73:42]",
+        "local": "dev://eth1"
+      },
+      {
+        "name": "/ndn/edu/pkusz/node10",
+        "network": "/ndn",
+        "site": "/edu/pkusz",
+        "router": "/node10",
+        "nicIndex": -1,
+        "ip": "121.15.171.83:6363",
+        "target": "tcp://121.15.171.83:6363",
+        "local": ""
+      }
+    ]
+  },
+  {
+    "name": "/ndn/edu/js/node3",
+    "network": "/ndn",
+    "site": "/edu/js",
+    "router": "/node3",
+    "id": 5,
+    "ip": "110.43.33.228",
+    "mapPort": 22,
+    "args": "-i ~/.ssh/js_id_rsa",
+    "username": "ubuntu",
+    "password": "123",
+    "nics": [
+      {
+        "name": "eth0",
+        "mac": "fa:16:3e:0e:74:3c"
+      },
+      {
+        "name": "eth1",
+        "mac": "fa:16:3e:6f:73:42"
+      }
+    ],
+    "nbs": [
+      {
+        "name": "/ndn/edu/js/node2",
+        "network": "/ndn",
+        "site": "/edu/js",
+        "router": "/node2",
+        "nicIndex": 1,
+        "target": "ether://[fa:16:3e:4f:ee:0b]",
+        "local": "dev://eth1"
+      },
+      {
+        "name": "/ndn/edu/js/node1",
+        "network": "/ndn",
+        "site": "/edu/js",
+        "router": "/node1",
+        "nicIndex": 0,
+        "target": "ether://[fa:16:3e:32:69:87]",
+        "local": "dev://eth0"
+      },
+      {
+        "name": "/ndn/edu/scut/hnlg3",
+        "network": "/ndn",
+        "site": "/edu/scut",
+        "router": "/hnlg3",
+        "nicIndex": -1,
+        "ip": "59.42.210.187:6363",
+        "target": "tcp://59.42.210.187:6363",
+        "local": ""
       }
     ]
   }
