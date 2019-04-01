@@ -53,7 +53,9 @@ function cloneOrUpdate() {
             fi
         fi
     fi
-    curl -L ${url} > ${name}.tar.gz
+    if [[ ! ${FORCE_UPDATE} -eq 2 ]]; then
+        curl -L ${url} > ${name}.tar.gz
+    fi
     tar xf ${name}.tar.gz -C ${name} --strip 1
     cd ${name}
 
